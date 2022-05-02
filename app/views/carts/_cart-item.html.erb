@@ -1,3 +1,17 @@
+<head>
+    <script type="text/javascript">
+      if (window.location.href.substr(-2) !== '?r') {
+    window.location = window.location.href + '?r';
+}  
+    </script>
+    <%
+=begin%>
+ <script type="text/javascript">         
+      setTimeout("location.reload();", 10000);
+    </script> 
+<%
+=end%>
+</head> 
 <h1>Cart#show</h1>
 <p>Find me in app/views/carts/show.html.erb</p>
 
@@ -15,3 +29,4 @@
 <%end %>
 
 <h1>Order Total: <%=number_with_precision(current_order.subtotal, precision: 2) %></h1>
+<br>
