@@ -12,11 +12,10 @@
 <%
 =end%>
 </head> 
-<h1>Cart#show</h1>
-<p>Find me in app/views/carts/show.html.erb</p>
+<h1>Cart</h1>
 
 <% @order_items.each do |item| %>
-    <h3><%=item.product.title %></h3>
+    <div class="food-title"><h3><%=item.product.title %></h3></div>
     <h5><%=number_with_precision(item.product.price, precision: 2) %></h3>
 
     <%= form_for item, remote: true do |f| %>

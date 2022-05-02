@@ -1,1 +1,1 @@
-<%= link_to "#{current_order.order_items.count} items at a total of #{number_with_precision(current_order.subtotal, precision: 2)}", cart_path %>
+<%= button_to "#{current_order.order_items.count} items at a total of #{number_with_precision(current_order.subtotal, precision: 2)}", cart_path, :method => :get %>
