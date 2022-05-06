@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Your order from *******</h1>
+    <h2>Order Details</h2>
+    <div>
+        <% @order.each do |item| %>
+            <%=item.product.title %>
+            $<%=number_with_precision(item.product.price, precision: 2) %>
+        
+            Subtotal: $<%=number_with_precision(item.total, precision: 2)%>
+        <%end %>
+    </div>
+</body>
+</html>

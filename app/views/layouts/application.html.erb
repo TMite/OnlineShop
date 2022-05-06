@@ -40,7 +40,6 @@
                     },
                   ],
                 }
-
                 return actions.order.create(createOrderPayload)
               },
 
@@ -49,8 +48,10 @@
                 const captureOrderHandler = (details) => {
                   const payerName = details.payer.name.given_name
                   console.log('Transaction completed!')
+                  window.location.replace("http://localhost:3000/success")
+                  //OrderNotficationEmailMailer.notification
                 }
-
+                
                 return actions.order.capture().then(captureOrderHandler)
               },
 

@@ -2,6 +2,7 @@ class CartsController < ApplicationController
   before_action :set_gon, only: [:show]
   #after_action :refresh_page, only: [:show]
   def show
+    
     @order_items = current_order.order_items
     #gon.finalPrice = current_order.subtotal
   end
