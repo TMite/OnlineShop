@@ -1,31 +1,30 @@
 <head>
-    <script type="text/javascript">
-      if (window.location.href.substr(-2) !== '?r') {
-    window.location = window.location.href + '?r';
-}  
-    </script>
-    <%
-=begin%>
- <script type="text/javascript">         
-      setTimeout("location.reload();", 10000);
-    </script> 
-<%
-=end%>
+ 
+ <script type="text/javascript">
+        if (window.location.href.substr(-2) !== '?r') {
+            window.location = window.location.href + '?r';
+        }  
+    </script>  
+
 </head> 
-<h1>Cart</h1>
-
+<div class = "center"><h1>Cart</h1></div>
 <% @order_items.each do |item| %>
-    <div class="food-title"><h3><%=item.product.title %></h3></div>
-    <h5><%=number_with_precision(item.product.price, precision: 2) %></h3>
+    <div class = "item-box">
+        <div class="food-title"><h3><%=item.product.title %></h3></div>
+        <div class="total"><h5>$<%=number_with_precision(item.product.price, precision: 2) %></h3></div>
 
-    <%= form_for item, remote: true do |f| %>
-        <%f.hidden_field :product_id, :value => item.product.id %>
-        <%=f.number_field :quantity, :value => item.quantity.to_i %>
-        <%=f.submit "Update Cart" %>
-        <%=link_to "Remove Order Item", order_item_path(item), method: :delete, remote: true %>
-    <%end %>
-    <h2>Subtotal: <%=number_with_precision(item.total, precision: 2)%></h2>
-<%end %>
-
-<h1>Order Total: <%=number_with_precision(current_order.subtotal, precision: 2) %></h1>
+        <%= form_for item, remote: true do |f| %>
+            <%f.hidden_field :product_id, :value => item.product.id %>
+            <%=f.number_field :quantity, :value => item.quantity.to_i %>
+            <%=f.submit "Update Cart" %>
+            <%=link_to "Remove Order Item", order_item_path(item), method: :delete, remote: true %>
+        <%end %>
+        <div class="total"><h2>Subtotal: $<%=number_with_precision(item.total, precision: 2)%></h2></div>
+    </div>
 <br>
+<%end %>
+<br>
+<div class="total center"><h1>Order Total: $<%=number_with_precision(current_order.subtotal, precision: 2) %></h1></div>
+<br>
+
+<div id="checkout"><%= render 'checkout'%></div>

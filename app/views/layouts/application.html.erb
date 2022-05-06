@@ -7,13 +7,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <head>
-    <%
-=begin%>
- <script type="text/javascript">         
-      setTimeout("location.reload();", 10000);
-    </script> 
-<%
-=end%>
 </head>   
      <script src="https://www.paypal.com/sdk/js?client-id=ATBX-iDhc5V0yW4W75NKBH2OAQ-QzNaPU_0gm_CNWBvj1DcBLA6SkesjVfYnip8gorhjRK02KNSfOvPW&currency=USD&intent=capture"></script>   
     <script>
@@ -30,6 +23,8 @@
               style: {
                 shape: 'pill',
                 height: 40,
+                color: 'black',
+                label: 'buynow'
               },
 
               // set up the transaction

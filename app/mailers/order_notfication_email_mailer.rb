@@ -1,0 +1,2 @@
+class OrderNotficationEmailMailer < ApplicationMailer
+end
