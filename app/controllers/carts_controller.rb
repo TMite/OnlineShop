@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   before_action :set_gon, only: [:show]
+  
   #after_action :refresh_page, only: [:show]
   def show
     
@@ -11,6 +12,7 @@ class CartsController < ApplicationController
 
   def set_gon
     gon.finalPrice = current_order.subtotal
+    gon.url = ENV['sucessURL']
   end
   
   def refresh_page
