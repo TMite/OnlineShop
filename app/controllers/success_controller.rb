@@ -2,7 +2,8 @@ class SuccessController < ApplicationController
     after_action :remove_cart, only: [:index]
     def index
         @order = current_order
-        OrderNotficationEmailMailer.notfication(@order).deliver
+        @name = current_order.name
+        OrderNotficationEmailMailer.notfication(@order, @name).deliver
         
     end
 

@@ -1,0 +1,6 @@
+<%= form_for @order_name, remote: true do |f| %>
+    <%=f.label :name %>
+    <%=f.text_field :name, value: @order_name%>
+    <br>
+    <%= f.submit "Update Name" %>
+<%end %>

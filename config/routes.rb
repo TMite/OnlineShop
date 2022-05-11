@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :shops , only: [:index, :show]
   resources :products
   resources :order_items
+  resources :order
   resource :cart, only: [:show]
   resource :social, only: [:show]
   resources :success

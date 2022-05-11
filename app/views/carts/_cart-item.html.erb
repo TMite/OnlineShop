@@ -7,6 +7,13 @@
     </script>  
 
 </head> 
+<%= form_for @order, remote: true do |f| %>
+    <%=f.label :name %>
+    <%=f.text_field :name, value: @order.name%>
+    <br>
+    <%= f.submit "Update Name" %>
+<%end %>
+<br>
 <div class = "center"><h1>Cart</h1></div>
 <% @order_items.each do |item| %>
     <div class = "item-box">
