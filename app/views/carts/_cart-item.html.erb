@@ -11,7 +11,10 @@
     <%=f.label :name %>
     <%=f.text_field :name, value: @order.name%>
     <br>
-    <%= f.submit "Update Name" %>
+    <%=f.label :email %>
+    <%=f.text_field :email, value: @order.email%>
+    <br>
+    <%= f.submit "Update Information" %>
 <%end %>
 <br>
 <div class = "center"><h1>Cart</h1></div>

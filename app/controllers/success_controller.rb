@@ -3,7 +3,8 @@ class SuccessController < ApplicationController
     def index
         @order = current_order
         @name = current_order.name
-        OrderNotficationEmailMailer.notfication(@order, @name).deliver
+        @email = current_order.email
+        OrderNotficationEmailMailer.notfication(@order, @name, @email).deliver
         
     end
 

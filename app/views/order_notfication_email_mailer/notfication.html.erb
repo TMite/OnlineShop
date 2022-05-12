@@ -28,6 +28,7 @@
     <div class = "title"><h1>Your order from *******</h1></div>
     <h2>Order Details</h2>
     <h3><%=@name %></h3>
+    <br>
     <div class = "order_items">
         <% @order.each do |item| %>
             <%=item.product.title %>: $<%=number_with_precision(item.product.price, precision: 2) %> Quantity: <%= (item.total/item.product.price)%>
