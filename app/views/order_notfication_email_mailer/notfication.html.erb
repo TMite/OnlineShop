@@ -26,6 +26,8 @@
 <body>
 
     <div class = "title"><h1>Your order from *******</h1></div>
+    <br>
+    <div class = "title"><h1>*********************</h1></div>
     <h2>Order Details</h2>
     <h3><%=@name %></h3>
     <br>
@@ -38,6 +40,6 @@
         <%end %>
     </div>
     <div class = "e_total"><h1>Order Total: $<%=number_with_precision(@order_total, precision: 2) %></h1></div>
-    
+    <br>
 </body>
 </html>
