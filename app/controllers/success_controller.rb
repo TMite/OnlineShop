@@ -4,7 +4,7 @@ class SuccessController < ApplicationController
         @order = current_order
         @name = current_order.name
         @email = current_order.email
-        gon.SuccessRED = ENV['successred']
+        gon.SuccessRED = "social"
         OrderNotficationEmailMailer.notfication(@order, @name, @email).deliver
         
     end
