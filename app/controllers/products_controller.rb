@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
     if current_user && current_user.admin?
     @products = Product.all
     else
-    redirect_to ENV['signinred']
+    redirect_to '/users/sign_in'
     end
     
   end
