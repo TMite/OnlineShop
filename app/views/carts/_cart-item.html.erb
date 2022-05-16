@@ -1,10 +1,88 @@
 <head>
  
- <script type="text/javascript">
+    <script type="text/javascript">
         if (window.location.href.substr(-2) !== '?r') {
             window.location = window.location.href + '?r';
         }  
     </script>  
+    <script>
+      const fundingSources = [
+            paypal.FUNDING.PAYPAL
+            ]
+
+          for (const fundingSource of fundingSources) {
+            const paypalButtonsComponent = paypal.Buttons({
+              fundingSource: fundingSource,
+
+              // optional styling for buttons
+              // https://developer.paypal.com/docs/checkout/standard/customize/buttons-style-guide/
+              style: {
+                shape: 'pill',
+                height: 40,
+                color: 'black',
+                label: 'buynow'
+              },
+
+              // set up the transaction
+              createOrder: (data, actions) => {
+                // pass in any options from the v2 orders create call:
+                // https://developer.paypal.com/api/orders/v2/#orders-create-request-body
+                const createOrderPayload = {
+                  purchase_units: [
+                    {
+                      amount: {
+                        value: gon.finalPrice,
+                      },
+                    },
+                  ],
+                }
+                return actions.order.create(createOrderPayload)
+              },
+
+              // finalize the transaction
+              onApprove: (data, actions) => {
+                const captureOrderHandler = (details) => {
+                  const payerName = details.payer.name.given_name
+                  console.log('Transaction completed!')
+                  window.location.replace(gon.url)
+                  //OrderNotficationEmailMailer.notification
+                }
+                
+                return actions.order.capture().then(captureOrderHandler)
+              },
+
+              onCancel: (data, actions) => {
+                const captureOrderHandler = (details) => {
+                  const payerName = details.payer.name.given_name
+                  console.log('Transaction Canceled')
+                  window.location.replace("http://localhost:3000/social")
+                  //OrderNotficationEmailMailer.notification
+                }
+                
+                return actions.order.capture().then(captureOrderHandler)
+              },
+
+              // handle unrecoverable errors
+              onError: (err) => {
+                console.error(
+                  'An error prevented the buyer from checking out with PayPal',
+                )
+                
+              },
+              
+            })
+
+            if (paypalButtonsComponent.isEligible()) {
+              paypalButtonsComponent
+                .render('#paypal-btn')
+                .catch((err) => {
+                  console.error('PayPal Buttons failed to render')
+                })
+            } else {
+              console.log('The funding source is ineligible')
+            }
+          }
+    </script>   
 
 </head>
 <body>

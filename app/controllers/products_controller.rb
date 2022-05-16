@@ -3,7 +3,12 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
+    if current_user && current_user.admin?
     @products = Product.all
+    else
+    redirect_to "http://localhost:3000/users/sign_in"
+    end
+    
   end
 
   # GET /products/1 or /products/1.json
