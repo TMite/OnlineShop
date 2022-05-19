@@ -14,8 +14,11 @@
  *= require_self
  */
 body {
-    font-size: 100%;
-    font-weight: 500;
+    background-color: rgba(207, 22, 161, .55);
+    background-image: url(Logo.jpg);
+    background-repeat: repeat;
+    //background-position: center;
+    background-size: contain;
 }
  .navTextColor a {
      color:rgb(226, 13, 13);
@@ -24,11 +27,8 @@ body {
     text-align: center;
  }
 .background {
-    background-color: rgb(207, 22, 161);
-    background-image: url(Logo.jpg);
-    background-repeat: no-repeat;
-    //background-position: center;
-    background-size: cover;
+    
+    
 }
 #footer {
     position: fixed;

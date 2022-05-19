@@ -86,24 +86,24 @@
 
 </head>
 <body>
-    
+    <h3>Add a name and email to be associated with your order</h3>
     <%= form_for @order, remote: true do |f| %>
     <div class = "info-form">
         <%=f.label :name %>
-        <%=f.text_field :name, value: @order.name%>
+        <%=f.text_field :name, value: @order.name, class: 'text-box'%>
+    </div>
+    <div class = "info-form">
+        <%=f.label :email %>
+        <%=f.text_field :email, value: @order.email, class: 'text-box'%>
     </div>
         <br>
     <div class = "info-form">
-        <%=f.label :email %>
-        <%=f.text_field :email, value: @order.email%>
-        </div>
-        <br>
-    <div class = "info-form">
-        <%= f.submit "Update Information" %>
+        <%= f.submit "Update Information", class: 'btn btn-secondary' %>
         </div>
     <%end %>
     <br>
-    <div class = "cart-text center"><h1>Cart</h1></div>
+    <div class = "cart-text center">Cart</div>
+    <br>
     <% @order_items.each do |item| %>
         <div class = "item-box">
             <div class="food-title"><h3><%=item.product.title %></h3></div>
@@ -112,7 +112,7 @@
             <%= form_for item, remote: true do |f| %>
                 <%f.hidden_field :product_id, :value => item.product.id %>
                 <%=f.number_field :quantity, :value => item.quantity.to_i %>
-                <%=f.submit "Update Cart" %>
+                <%=f.submit "Update Cart", class: 'btn btn-secondary' %>
                 <%=link_to "Remove Order Item", order_item_path(item), method: :delete, remote: true %>
             <%end %>
             <div class="cart-text"><h2>Subtotal: $<%=number_with_precision(item.total, precision: 2)%></h2></div>

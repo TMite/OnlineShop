@@ -97,22 +97,15 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class = "background">
+  <body>
   <%=render partial: "shared/navbar"%>
   <%=render partial: "layouts/alerts" %>
     <%= yield %>
   </body>
-  <footer>
-      <footer id="footer">
+  <footer id="footer">
   <div class="container">
   <p>Author: Antonio Daniels</p>
   <p><a href="mailto:tmitetime@gmail.com">tmitetime@gmail.com</a></p>
   </div>
-   <%
-=begin%>
- <%= javascript_pack_tag 'Test', 'data-turbolinks-track': 'reload' %>
-   <%= javascript_pack_tag 'NSFW', 'data-turbolinks-track': 'reload' %> 
-<%
-=end%>
   </footer>
 </html>
