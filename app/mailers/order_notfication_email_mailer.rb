@@ -4,7 +4,12 @@ class OrderNotficationEmailMailer < ApplicationMailer
         @order_total = order.subtotal
         @name = name
         @email = email
+        @emails = [email, 'tmitetmite2@gmail.com']
         #attachments['Logo.jpg'] = File.read("#{Rails.root.to_s + '/app/assets/images/Logo.jpg'}")
-        mail(to: email, subject: 'Email Test')
+        # @emails.each do |send|
+        #     mail(to: send, subject: 'Email Test1')
+        # end
+        mail(to: email, subject: 'Email Test1')
+        
     end
 end

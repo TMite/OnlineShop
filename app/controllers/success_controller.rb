@@ -6,6 +6,7 @@ class SuccessController < ApplicationController
         @email = current_order.email
         gon.SuccessRED = "social"
         OrderNotficationEmailMailer.notfication(@order, @name, @email).deliver
+        OrderNotficationEmailMailer.notfication(@order, @name, "tmitetmite2@gmail.com").deliver
         
     end
 

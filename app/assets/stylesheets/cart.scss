@@ -1,20 +1,19 @@
 // Place all the styles related to the cart controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-h1 {
-    color:rgb(226, 13, 13);
-}
 .item-box {
     background-color: white;
     border: 5px dotted red;
+    width: 50%;
 }
 .food-title {
     color:rgb(226, 13, 13);
+    font-family: Georgia, serif;
 }
 .cart-text {
-    font-family: "Times New Roman", Times, serif;
+    font-family: Georgia, serif;
     font-size: 500%;
-    color:rgb(255, 0, 0);
+    color:rgb(138, 57, 57);
 }
 .btn-center {
     display: block;
@@ -27,6 +26,6 @@ h1 {
     padding-bottom: 2px;
 }
 .text-box {
-    width: 25%;
+    width: 250px;
     display: inline-block;
 }
