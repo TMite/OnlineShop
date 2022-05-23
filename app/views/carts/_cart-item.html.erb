@@ -96,6 +96,10 @@
         <%=f.label :email %>
         <%=f.text_field :email, value: @order.email, class: 'text-box'%>
     </div>
+    <div class = "info-form">
+        <%=f.label :address %>
+        <%=f.text_field :address, value: @order.address, class: 'text-box'%>
+    </div>
         <br>
     <div class = "info-form">
         <%= f.submit "Update Information", class: 'btn btn-secondary' %>

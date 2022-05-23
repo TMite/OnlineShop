@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css" media="screen">
     .title {
-    font-size: 1.5em;
-    font-family: "Times New Roman", Times, serif;
+        font-size: 1.5em;
+        font-family: "Times New Roman", Times, serif;
     }
 
     .order_items {
-    font-size: 1.5em;
-    font-family: "Times New Roman", Times, serif;
-    border: 5px dotted red;
-}
+        font-size: 1.5em;
+        font-family: "Times New Roman", Times, serif;
+        border: 5px dotted red;
+    }
 
     .e_total {
-    font-size: 2em;
-    font-family: "Times New Roman", Times, serif;
-    color:rgb(255, 0, 0);
-}
+        font-size: 2em;
+        font-family: "Times New Roman", Times, serif;
+        color:rgb(255, 0, 0);
+    }
+
+    .border {
+        border: 5px dotted red
+    }
     </style>
     <title>Document</title>
 </head>
-<body>
+<body class = "border">
 
     <div class = "title"><h1>Your order from *******</h1></div>
     <br>
@@ -31,6 +35,7 @@
     <h2>Order Details</h2>
     <h3><%=@name %></h3>
     <br>
+    <h3><%=@address %></h3>
     <div class = "order_items">
         <% @order.each do |item| %>
             <%=item.product.title %>: $<%=number_with_precision(item.product.price, precision: 2) %> Quantity: <%= (item.total/item.product.price)%>
