@@ -45,3 +45,7 @@ yarn-debug.log*
 /config/credentials/production.key
 
 /config/credentials/test.key
+
+/server.csr
+/server.key 
+/server.pass.key

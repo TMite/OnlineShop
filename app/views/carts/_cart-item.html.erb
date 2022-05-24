@@ -120,6 +120,7 @@
                 <%=link_to "Remove Order Item", order_item_path(item), method: :delete, remote: true %>
             <%end %>
             <div class="cart-text"><h2>Subtotal: $<%=number_with_precision(item.total, precision: 2)%></h2></div>
+            <%=image_tag(item.product.image, size: '260x180')%>
         </div>
     <br>
     <%end %>

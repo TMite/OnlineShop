@@ -5,5 +5,37 @@
     //font-family: "Times New Roman", Times, serif;
     //font-size: 70;
     font-weight: 900;
-    //color:rgb(252, 0, 0);
+    color:rgb(255, 255, 255);
 }
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+a {
+    font-size: 1.5em;
+}
+a:link {
+    color: red;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: green;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: hotpink;
+    background-color: transparent;
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+  }
