@@ -9,7 +9,7 @@ class OrderNotficationEmailMailer < ApplicationMailer
         # @emails.each do |send|
         #     mail(to: send, subject: 'Email Test1')
         # end
-        mail(to: email, subject: 'Email Test1')
+        mail(to: email, subject: 'Order Summary')
         
     end
 end

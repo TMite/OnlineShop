@@ -7,7 +7,7 @@ class SuccessController < ApplicationController
         @address = current_order.address
         gon.successRED = ENV['successred']
         OrderNotficationEmailMailer.notfication(@order, @name, @email, @address).deliver
-        OrderNotficationEmailMailer.notfication(@order, @name, "tmitetmite2@gmail.com", @address).deliver
+        OrderNotficationEmailMailer.notfication(@order, @name, ENV['gmail_username'], @address).deliver
         
     end
 
