@@ -29,14 +29,20 @@ html{
     height: -webkit-fill-available;
 }
 body {
+    display: flex;
+    flex-direction: column;
+    height: -webkit-fill-available;
     background-color: rgba(207, 22, 161, .55);
     background: linear-gradient(rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.25)), url(Logo.jpg);
     background-repeat: repeat;
     //background-position: center;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    height: -webkit-fill-available;
+    
+    
+}
+@viewport{
+    zoom: 1.0;
+    width: extend-to-zoom;
 }
  .navTextColor a {
      color:rgb(226, 13, 13);
