@@ -25,16 +25,18 @@
     font-family: Georgia, serif;
     color: white;
  }
- 
+html{
+    height: -webkit-fill-available;
+}
 body {
     background-color: rgba(207, 22, 161, .55);
     background: linear-gradient(rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.25)), url(Logo.jpg);
     background-repeat: repeat;
     //background-position: center;
     background-size: cover;
-}
-.darkend {
-    
+    display: flex;
+    flex-direction: column;
+    height: -webkit-fill-available;
 }
  .navTextColor a {
      color:rgb(226, 13, 13);
