@@ -7,20 +7,20 @@
     <% @products.each do |product| %>
     
     <div class = "item-box">    
-        <div class = "title"><%= product.title %></div>
+        <div class = "food-title"><%= product.title %></div>
         <%=image_tag(product.image, style:'height:70%; width:100%;')%><br>
-        <%= product.description %><br>
-        <%= number_with_precision(product.price, precision: 2)%>
+        <div class = "food-title">$<%= number_with_precision(product.price, precision: 2)%></div><br>
         <%= form_for @order_item, remote: true do |f|%>
             <%=f.hidden_field :product_id, :value => product.id%>
             <%=f.number_field :quantity, :value => 1, :min => 1, style: 'width: 50%' %>
-            <%= f.submit "Add to Cart", class: 'btn btn-secondary', style: 'font-family: Georgia, serif'%>
+            <%=f.submit "Add to Cart", class: 'btn btn-secondary', style: 'font-family: Georgia, serif'%>
             <%end %>
             </div>
     <% end %>
     </div>
+    <br>
+    <div id="cart">
+    <%=render 'carts/cart' %>
+    </div>
   </body>
 <br>
-<div id="cart">
-<%=render 'carts/cart' %>
-</div>

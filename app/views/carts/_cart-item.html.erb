@@ -100,6 +100,7 @@
         <%=f.label :address %>
         <%=f.text_field :address, value: @order.address, class: 'text-box'%>
     </div>
+    (Add NA if picking up)
         <br>
     <div class = "info-form">
         <%= f.submit "Update Information", class: 'btn btn-secondary' %>
@@ -109,8 +110,8 @@
     <div class = "cart-text center">Cart</div>
     <br>
     <% @order_items.each do |item| %>
-        <div class = "item-box">
-            <div class="food-title"><h3><%=item.product.title %></h3></div>
+        <div class = "cart-box">
+            <div class="food-title"><%=item.product.title %></div>
             <div class="cart-text"><h5>$<%=number_with_precision(item.product.price, precision: 2) %></h3></div>
 
             <%= form_for item, remote: true do |f| %>

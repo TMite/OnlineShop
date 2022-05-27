@@ -35,7 +35,11 @@
     <h2>Order Details</h2>
     <h3><%=@name %></h3>
     <br>
-    <h3><%=@address %></h3>
+    <%if @address != "NA" %>
+        <h3><%=@address %></h3>
+    <%else %>
+        <h3><%=ENV['pick_up'] %></h3>
+    <%end %>
     <div class = "order_items">
         <% @order.each do |item| %>
             <%=item.product.title %>: $<%=number_with_precision(item.product.price, precision: 2) %> Quantity: <%= (item.total/item.product.price)%>
