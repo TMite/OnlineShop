@@ -4,8 +4,20 @@
 .item-box {
     background-color: white;
     border: 5px dotted red;
-    width: 50%;
 }
+.grid-3-columns{
+  margin: auto;
+  width: min(90%);
+  display:grid;
+  grid-template-columns: 24% 24% 24%;
+  grid-gap: 5em
+}
+@media(max-width: 60em) {
+    .grid-3-columns{
+      grid-template-columns: 33% 33%;
+    }
+  }
+
 .food-title {
     color:rgb(226, 13, 13);
     font-family: Georgia, serif;

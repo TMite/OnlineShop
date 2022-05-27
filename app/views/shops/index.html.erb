@@ -2,34 +2,24 @@
 
 <h1>Neesh'z Treat'z & Eat'z</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Image</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
   <body>
+  <div class = "grid-3-columns">
     <% @products.each do |product| %>
-      <tr>
-        <td><%= product.title %></td>
-        <td><%=image_tag(product.image, size: '260x180')%></td>
-        <td><%= product.description %></td>
-        <td><%= number_with_precision(product.price, precision: 2)%></td>
-        <td><%= form_for @order_item, remote: true do |f|%>
+    
+    <div class = "item-box">    
+        <div class = "title"><%= product.title %></div>
+        <%=image_tag(product.image, style:'height:70%; width:100%;')%><br>
+        <%= product.description %><br>
+        <%= number_with_precision(product.price, precision: 2)%>
+        <%= form_for @order_item, remote: true do |f|%>
             <%=f.hidden_field :product_id, :value => product.id%>
             <%=f.number_field :quantity, :value => 1, :min => 1, style: 'width: 50%' %>
             <%= f.submit "Add to Cart", class: 'btn btn-secondary', style: 'font-family: Georgia, serif'%>
             <%end %>
-        </td>
-      </tr>
+            </div>
     <% end %>
+    </div>
   </body>
-</table>
 <br>
 <div id="cart">
 <%=render 'carts/cart' %>
