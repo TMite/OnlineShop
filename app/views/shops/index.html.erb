@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Neesh'z Treat'z & Eat'z</h1>
+<h1 class = "center">Neesh'z Treat'z & Eat'z</h1>
 
   <body>
   <div class = "grid-3-columns">
@@ -8,7 +8,7 @@
     
     <div class = "item-box">    
         <div class = "food-title"><%= product.title %></div>
-        <%=image_tag(product.image, style:'height:70%; width:100%;')%><br>
+        <%=image_tag(product.image, style:'height:60%; width:100%;')%><br>
         <div class = "food-title">$<%= number_with_precision(product.price, precision: 2)%></div><br>
         <%= form_for @order_item, remote: true do |f|%>
             <%=f.hidden_field :product_id, :value => product.id%>
