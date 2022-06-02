@@ -30,11 +30,14 @@
   <div id="cart">
     <%=render 'carts/cart' %>
   </div>
-  <div class = "center">
-    <div class="item-show-title"><%= @product.title %></div><br>
-    <%= image_tag(@product.image, style:'height:55%; width:55%;')%><br>
-    <div class = "item-show-description"><%= @product.description %></div><br>
-    <div class = "item-show-title">$<%= number_with_precision(@product.price, precision: 2)%></div><br>
+  <div class = "grid-3-columns">
+    <div class = "center">
+        <div class="item-show-title"><%= @product.title %></div><br>
+        <%= image_tag(@product.image, style:'height:150%; width:200%;')%><br>
+    </div>
+    <div class = "center">
+        <div class = "item-show-description"><%= @product.description %></div><br>
+        <div class = "item-show-title">$<%= number_with_precision(@product.price, precision: 2)%></div><br>
     <%= form_for @order_item, remote: true do |f| %> 
       <%=f.label "Order Note", class: "item-show-description" %>
       <%=f.text_area :note, size: "30x5" %>
@@ -46,4 +49,5 @@
       <%=f.submit "Add to Cart", class: 'btn btn-secondary', style: 'font-family: Georgia, serif; display:inline;'%>
     <%end %>
     </div>
+  </div>
 </body>
