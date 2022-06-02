@@ -8,7 +8,7 @@
     
     <div class = "item-box">    
         <div class = "food-title"><%= product.title %></div>
-        <%=image_tag(product.image, style:'height:60%; width:100%;')%><br>
+        <%=link_to image_tag(product.image, style:'height:60%; width:100%;'), shop_path(product) %><br>
         <div class = "food-title">$<%= number_with_precision(product.price, precision: 2)%></div><br>
         <%= form_for @order_item, remote: true do |f|%>
             <%=f.hidden_field :product_id, :value => product.id%>

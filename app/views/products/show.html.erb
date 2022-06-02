@@ -11,6 +11,11 @@
 </p>
 
 <p>
+  <strong>Flavors Number:</strong>
+  <%= @product.required_num %>
+</p>
+
+<p>
   <strong>Price:</strong>
   <%= number_with_precision(@product.price, precision: 2)%>
 </p>
