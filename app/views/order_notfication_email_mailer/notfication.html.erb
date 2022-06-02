@@ -40,14 +40,15 @@
     <%else %>
         <h3><%=ENV['pick_up'] %></h3>
     <%end %>
-    <div class = "order_items">
-        <% @order.each do |item| %>
+    <% @order.each do |item| %>
+        <div class = "order_items">       
             <%=item.product.title %>: $<%=number_with_precision(item.product.price, precision: 2) %> Quantity: <%= (item.total/item.product.price)%>
             <br>
             Subtotal: $<%=number_with_precision(item.total, precision: 2)%>
             <br>
-        <%end %>
-    </div>
+            Order Note: <%=item.note %>      
+        </div>
+    <%end %>
     <div class = "e_total"><h1>Order Total: $<%=number_with_precision(@order_total, precision: 2) %></h1></div>
     <br>
 </body>

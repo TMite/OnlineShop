@@ -1,7 +1,6 @@
 class OrderItem < ApplicationRecord
     belongs_to :order
     belongs_to :product
-    has_many :flavors
 
     before_save :set_unit_price
     before_save :set_total

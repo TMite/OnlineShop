@@ -122,6 +122,8 @@
             <%end %>
             <div class="cart-text"><h2>Subtotal: $<%=number_with_precision(item.total, precision: 2)%></h2></div>
             <%=image_tag(item.product.image, size: '260x180')%>
+            <br>
+            Note:<%=item.note %>
         </div>
     <br>
     <%end %>
