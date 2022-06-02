@@ -6,18 +6,14 @@
   <div id="cart">
     <%=render 'carts/cart' %>
   </div>
+  <br>
   <div class = "grid-3-columns">
     <% @products.each do |product| %> 
     <div class = "item-box">    
         <div class = "food-title"><%= product.title %></div>
         <%=link_to image_tag(product.image, style:'height:60%; width:100%;'), shop_path(product) %><br>
         <div class = "food-title">$<%= number_with_precision(product.price, precision: 2)%></div><br>
-        <%= form_for @order_item, remote: true do |f|%>
-            <%=f.hidden_field :product_id, :value => product.id%>
-            <%=f.number_field :quantity, :value => 1, :min => 1, style: 'width: 20%; display:inline;' %>
-            <%=f.submit "Add to Cart", class: 'btn btn-secondary', style: 'font-family: Georgia, serif; display:inline;'%>
-            <%end %>
-            </div>
+
     <% end %>
     </div>
     
