@@ -40,7 +40,7 @@
         <div class = "item-show-title">$<%= number_with_precision(@product.price, precision: 2)%></div><br>
     <%= form_for @order_item, remote: true do |f| %> 
       <%=f.label "Order Note", class: "item-show-description" %>
-      <%=f.text_area :note, size: "30x5" %>
+      <%=f.text_area :note, style: "width:100%;"%>
       <br>
       *Use the Order Note box to list flavors wanted if applicable
       <br>
