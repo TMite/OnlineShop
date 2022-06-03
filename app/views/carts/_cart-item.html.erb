@@ -83,7 +83,6 @@
             }
           }
     </script>   
-
 </head>
 <body>
     <h3>Add a name and email to be associated with your order</h3>
@@ -101,7 +100,11 @@
         <%=f.text_field :address, value: @order.address, class: 'text-box'%>
     </div>
     (Add NA if picking up)
-        <br>
+    <div class = "info-form">
+        <%=f.label :date %>
+        <%=f.date_field :date, value: @order.date, class: 'text-box'%>
+    </div>
+    <br>
     <div class = "info-form">
         <%= f.submit "Update Information", class: 'btn btn-secondary' %>
         </div>

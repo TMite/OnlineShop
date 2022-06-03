@@ -29,17 +29,22 @@
 </head>
 <body class = "border">
 
-    <div class = "title"><h1>Your order from *******</h1></div>
+    <div class = "title"><h1>Your order from Neesh'z Treat'z & Eat'z</h1></div>
     <br>
-    <div class = "title"><h1>*********************</h1></div>
+    <div class = "title"><h1>***************************************</h1></div>
     <h2>Order Details</h2>
     <h3><%=@name %></h3>
     <br>
     <%if @address != "NA" %>
-        <h3><%=@address %></h3>
+        <h3>Delivery Address: <%=@address %></h3>
+        <br>
+        <h3>Delivery Date: <%=@date %></h3>
     <%else %>
-        <h3><%=ENV['pick_up'] %></h3>
+        <h3>Pick-Up Address: <%=ENV['pick_up'] %></h3>
+        <br>
+        <h3>Pick-Up Date: <%=@date %></h3>
     <%end %>
+    
     <% @order.each do |item| %>
         <div class = "order_items">       
             <%=item.product.title %>: $<%=number_with_precision(item.product.price, precision: 2) %> Quantity: <%= (item.total/item.product.price)%>

@@ -5,9 +5,10 @@ class SuccessController < ApplicationController
         @name = current_order.name
         @email = current_order.email
         @address = current_order.address
+        @date = current_order.date
         gon.successRED = ENV['successred']
-        OrderNotficationEmailMailer.notfication(@order, @name, @email, @address).deliver
-        OrderNotficationEmailMailer.notfication(@order, @name, ENV['gmail_username'], @address).deliver
+        OrderNotficationEmailMailer.notfication(@order, @name, @email, @address, @date).deliver
+        OrderNotficationEmailMailer.notfication(@order, @name, ENV['gmail_username'], @address, @date).deliver
         
     end
 
