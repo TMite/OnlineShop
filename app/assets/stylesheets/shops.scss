@@ -29,7 +29,7 @@ table{
     width: min(90%);
     display:grid;
     grid-template-columns: 26% 26% 26%;
-    grid-gap: 5em
+    grid-gap: 5em;
   }
   @media(max-width: 60em) {
       .grid-3-columns{

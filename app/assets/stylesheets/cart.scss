@@ -4,7 +4,14 @@
 .cart-box {
     background-color: white;
     border: 5px dotted red;
-    width: 50%;
+    width: 75%;
+}
+@media(max-width: 60em) {
+    .cart-box {
+        background-color: white;
+        border: 5px dotted red;
+        width: 100%;
+    }
 }
 .food-title {
     color:rgb(226, 13, 13);
