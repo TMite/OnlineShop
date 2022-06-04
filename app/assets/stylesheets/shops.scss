@@ -33,6 +33,7 @@ table{
   }
   @media(max-width: 60em) {
       .grid-3-columns{
+          margin: 10px;
         grid-template-columns: 45% 45%;
       }
     }
