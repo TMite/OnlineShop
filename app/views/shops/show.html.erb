@@ -34,7 +34,7 @@
   <div class = "grid-3-columns">
     <div class = "center">
         <div class="item-show-title"><%= @product.title %></div><br>
-        <%= image_tag(@product.image, size: '200x180', style: 'transform: translate(-50px);')%><br>
+        <%= image_tag(@product.image, size: '240x160', style: 'transform: translate(-60px);')%><br>
     </div>
     <div class = "center">
         <div class = "item-show-description"><%= @product.description %></div><br>
@@ -46,8 +46,8 @@
       <div class = "notice">*Use the Order Note box to list flavors wanted if applicable</div>
       <br>
       <%=f.hidden_field :product_id, :value => @product.id%>
-      <%=f.number_field :quantity, :value => 1, :min => 1, style: 'width: 35%; display:inline;' %>
-      <%=f.submit "Add to Cart", class: 'btn custom-btn', style: 'font-family: Georgia, serif; display:inline;'%>
+      <%=f.number_field :quantity, :value => 1, :min => 1, style: 'width: 40%; display:inline;' %>
+      <%=f.submit "Add to Cart", class: 'btn custom-btn', style: 'font-family: Georgia, serif; display:inline;transform: translate(-20px);'%>
     <%end %>
     </div>
   </div>
