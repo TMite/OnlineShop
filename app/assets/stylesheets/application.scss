@@ -73,3 +73,29 @@ tr {
 .quantity-box {
     width: 10%;
 }
+// custom class for background
+.navbar-customclass {
+    background-color: rgb(233, 10, 196);
+}
+/* changing brand text color*/
+.navbar-customclass .navbar-brand,
+.navbar-customclass .navbar-text {
+    color: #1023d4;
+}
+/* navigation link text color */
+.navbar-customclass .navbar-nav .nav-link {
+    color: #1023d4;
+}
+/* navigation links anchor hover and active styles */
+.navbar-customclass .nav-item.active .nav-link,
+.navbar-customclass .nav-item:hover .nav-link
+{
+    color: #1023d4;
+}
+.custom-btn {
+    background-color: rgb(233, 10, 196);
+    color: #1023d4;
+}
+.custom-btn:hover {
+    color: #ffffff;
+}
