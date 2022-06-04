@@ -1,0 +1,24 @@
+    <h3>Add a name and email to be associated with your order</h3>
+    <%= form_for @order, remote: true do |f| %>
+    <div class = "info-form">
+        <%=f.label "Full Name", class: 'label-form' %>
+        <%=f.text_field :name, value: @order.name, class: 'text-box'%>
+    </div>
+    <div class = "info-form">
+        <%=f.label "Email Address", class: 'label-form' %>
+        <%=f.email_field :email, value: @order.email, class: 'text-box'%>
+    </div>
+    <div class = "info-form">
+        <%=f.label "Address", class: 'label-form' %>
+        <%=f.text_field :address, value: @order.address, class: 'text-box'%>
+    </div>
+    <div class = "label-form">(Add NA if picking up)</div>
+    <div class = "info-form">
+        <%=f.label "Delivery/Pick-Up Date", class: 'label-form' %>
+        <%=f.date_field :date, value: @order.date, class: 'text-box'%>
+    </div>
+    <br>
+    <div class = "info-form">
+        <%= f.submit "Update Information", class: 'btn custom-btn' %>
+        </div>
+    <%end %>
