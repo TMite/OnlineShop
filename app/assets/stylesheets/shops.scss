@@ -23,11 +23,12 @@ table{
 .item-box {
     background-color: white;
     border: 5px solid red;
+    text-align: center;
+    height: 350px;
 }
 .grid-3-columns{
     margin: auto;
     width: min(90%);
-    height: min(90%);
     display:grid;
     grid-template-columns: 26% 26% 26%;
     grid-gap: 5em;
