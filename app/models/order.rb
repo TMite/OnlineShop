@@ -1,6 +1,10 @@
 class Order < ApplicationRecord
     has_many :order_items
     before_save :set_subtotal
+    validates :name, presence: true
+    validates :email, presence: true
+    validates :address, presence: true
+    validates :date, presence: true
     def subtotal
         order_items.collect{|order_item| order_item.valid? ? order_item.unit_price*order_item.quantity : 0}.sum
     end
