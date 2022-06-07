@@ -56,6 +56,19 @@ table{
     font-size: 22%;
     color:rgb(238, 13, 13);
 }
+.food-description {
+    color:rgb(226, 13, 13);
+    font-family: Georgia, serif;
+    font-size: 1.5em;
+    }
+@media(max-width: 60em){
+    .food-description {
+    color:rgb(226, 13, 13);
+    font-family: Georgia, serif;
+    font-size: 1.0em;
+    }
+}
+
 .btn-center {
     display: block;
     margin-left: auto;
