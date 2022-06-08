@@ -1,20 +1,18 @@
 class ShopsController < ApplicationController
   def index
-    @order = current_order
-    if @order.id == nil
-      #render "success/show"
-    end
+    puts session[:order_id]
+    # if @order.id == nil
+    #   puts "NO ID"
+
+    # end
     @products = Product.all
-    @order_item = current_order.order_items.new
-    
   end
 
   def show
-    @order = current_order
-    if @order.id == nil
-      #render "success/show"
-    end
-    @products = Product.all
+    # if @order.id == nil
+    #   puts "No ID"
+    #   puts @order.id
+    # end
     @order_item = current_order.order_items.new
     @product = Product.find(params[:id])
   end

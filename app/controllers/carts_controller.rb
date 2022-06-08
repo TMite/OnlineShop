@@ -3,6 +3,7 @@ class CartsController < ApplicationController
   #after_action :refresh_page, only: [:show]
   def show
     @order = current_order
+    puts @order.id
     if @order.id == nil
       flash[:notice] = 'Please add items to cart before viewing'
       redirect_to shops_path alert
