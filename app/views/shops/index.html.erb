@@ -6,14 +6,15 @@
   </div>
   <br>
   <div class = "grid-3-columns">
-    <% @products.each do |product| %> 
-    <div class = "item-box">    
-        <div class = "food-title"><%= product.title %></div><br>
-        <%=link_to image_tag(product.image, style:'height:60%; width:100%;'), shop_path(product) %><br>
-        <div class = "food-title">$<%= number_with_precision(product.price, precision: 2)%></div><br>
-        <div class = "food-description"><%=truncate(product.description, length: 20) %></div>
-
-    </div>
+    <% @products.each do |product| %>
+      <% if product.active == true %> 
+        <div class = "item-box">    
+            <div class = "food-title"><%= product.title %></div><br>
+            <%=link_to image_tag(product.image, style:'height:60%; width:100%;'), shop_path(product) %><br>
+            <div class = "food-title">$<%= number_with_precision(product.price, precision: 2)%></div><br>
+            <div class = "food-description"><%=truncate(product.description, length: 20) %></div>
+        </div>
+      <% end %>
     <% end %>
   </div>
     
