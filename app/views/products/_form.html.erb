@@ -18,12 +18,7 @@
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :required_num %>
-    <%= form.number_field :required_num %>
+    <%= form.text_area :description %>
   </div>
 
   <div class="field">
@@ -37,7 +32,7 @@
 
   <div class="field">
     <%= form.label :active %>
-    <%= form.check_box :active %>
+    <%= form.check_box :active, checked: true %>
   </div>
 
   <div class="actions">
