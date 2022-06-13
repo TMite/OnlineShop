@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :title, class: 'label-form' %>
+    <%= form.text_field :title, class: 'text-box' %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.label :description, class: 'label-form' %>
+    <%= form.text_area :description, class: 'text-box' %>
   </div>
 
   <div class="field">
-    <%= form.label :image %>
+    <%= form.label :image, class: 'label-form' %>
     <%= form.file_field :image %>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
+    <%= form.label :price, class: 'label-form' %>
+    <%= form.text_field :price, class: 'text-box' %>
   </div>
 
   <div class="field">
-    <%= form.label :active %>
-    <%= form.check_box :active, checked: true %>
+    <%= form.label :active, class: 'label-form' %>
+    <%= form.check_box :active, checked: true, class: 'text-box' %>
   </div>
 
   <div class="actions">
