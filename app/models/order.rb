@@ -8,10 +8,10 @@ class Order < ApplicationRecord
     end
 
     def set_defaults
-        self.name = "John Doe"
-        self.email = "johndoe@gmail.com"
-        self.address = "1234 Road Dr"
-        self.date = Date.today
+        self.name ||= "John Doe"
+        self.email ||= "johndoe@gmail.com"
+        self.address ||= "1234 Road Dr"
+        self.date ||= Date.today
     end
 
     private 
